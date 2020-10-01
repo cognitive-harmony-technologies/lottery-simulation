@@ -71,9 +71,12 @@ const runLottery = (lottery) => {
     }, {});
     for(i = lottery.licensesAvailable; i >= 1 ; i--){
         const flattenedLottery = lottery.participants.reduce((agg, cur, ind, arr) => {
+            // Each win reduces number of apps left.
+            const numAppsLeft = cur.appCount - results[cur.name];
             // Limit participants to no more apps than number of licenses available in BLS region.
-            const numApps = Math.min(cur.appCount, i);
-            for(j = 1; j <= numApps; j++){
+            const numAppsInPlay = Math.min(numAppsLeft, i);
+            
+            for(j = 1; j <= numAppsInPlay; j++){
                 agg.push(cur.name);
             }
             return agg;
