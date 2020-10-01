@@ -28,7 +28,7 @@ YOUR_APP_COUNT|Number of apps YOU have in the lottery.
 ## Example:
 Console input:
 ``` sh
-node lottery.js 1000 3.5 20 "Your Company, INC" 4
+npm run lotterySimulation -- 1000 3.5 20 "Your Company, INC" 4
 ```
 
 Console output:
@@ -85,3 +85,9 @@ Simulating...
   'NPC20 INC': 0.795
 }
 ```
+Then view your results:
+``` sh
+npm run viewResults
+```
+
+![](images/results.png)
