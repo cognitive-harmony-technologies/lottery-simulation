@@ -1,7 +1,23 @@
-const numberSimulations = process.argv[2];
+const fs = require('fs');
+const numberSimulations = parseInt(process.argv[2]);
+const appDensity = parseFloat(process.argv[3]);
+const numberAdditionalParticipants = parseInt(process.argv[4]);
+const ourName = process.argv[5];
+const ourAppCount = parseInt(process.argv[6]);
+
+console.log('Starting simulator with parameters:');
+console.log(`Number Simulations: ${numberSimulations}`);
+console.log(`Application Density: ${appDensity}`);
+console.log(`Number Additional Participants: ${numberAdditionalParticipants}`);
+console.log(`Company Name: ${ourName}`)
+console.log(`Our App Count: ${ourAppCount}`);
+
 const lottery = {
     licensesAvailable: 47,
     participants: [{
+            name: ourName,
+            appCount: ourAppCount
+        },{
             name: '127 IL LLC',
             appCount: 1
         },{
@@ -61,7 +77,15 @@ const lottery = {
         }
     ]
 };
-function randomIntFromInterval(min, max) { // min and max included 
+const generateAdditionalPlayers = (numberToGenerate, participants) => {
+    for(n = 1; n <= numberToGenerate; n++){
+        participants.push({
+            name: `NPC${n} INC`,
+            appCount: appDensity
+        });
+    }
+};
+const randomIntFromInterval = (min, max) => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 const runLottery = (lottery) => {
@@ -88,23 +112,28 @@ const runLottery = (lottery) => {
     
     return results;
 };
+console.log('Generating Players...');
+generateAdditionalPlayers(numberAdditionalParticipants, lottery.participants);
+console.log('Playing field:');
+// console.log(lottery);
 console.log('Simulating...');
 const simulations = [];
 for(s = 1; s <= numberSimulations; s++){
     const results = runLottery(lottery);
     simulations.push(results);
 }
+fs.writeFileSync(`simulations.json`,'const resultData = '.concat(JSON.stringify(simulations)).concat(';'));
 const simulationResults = simulations.reduce((agg, cur, ind, arr) => {
-    if(agg){
-        Object.keys(cur).forEach((key) => {
-            agg[key] = agg[key] + cur[key];
-        });
-        return agg;
-    }else{
+    if(!agg){
         return cur;
     }
+    Object.keys(cur).forEach((key) => {
+        agg[key] = agg[key] + cur[key];
+    });
+    return agg;
 }, null);
-Object.keys(simulationResults).forEach((key) => {
-    simulationResults[key] = simulationResults[key] / numberSimulations;
+
+Object.keys(simulationResults).forEach((key) => {    
+    simulationResults[key] = (simulationResults[key] / numberSimulations);
 });
 console.log(simulationResults);

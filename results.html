@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    </head>
+    <body style="position:absolute;top:10px;bottom:10px;left:10px;right:10px;">
+        <div id="results" style="position:absolute;top:10px;bottom:10px;left:10px;right:10px;"></div>
+        <script type="text/javascript" src="simulations.json"></script>
+        <script>
+            const yourName = 'Your Company, INC';
+            const additionalName = 'NPC1 INC';
+            const bigPlayerName = 'GRI Holdings LLC';
+            RESULTS = document.getElementById('results');
+            const yourData = resultData.map(r => r[yourName]);
+            const additionalParticipangData = resultData.map(r => r[additionalName]);
+            const bigPlayerData = resultData.map(r => r[bigPlayerName]);
+            console.log(yourData);
+            const barWidth = 1.0;
+            const trace = {
+                name: yourName,
+                x: yourData,
+                type: 'histogram',
+                autobinx: false, 
+                xbins: {
+                    start: 0,
+                    end: 5, 
+                    size: barWidth, 
+                }
+            };
+            const trace2 = {
+                name: additionalName,
+                x: additionalParticipangData,
+                type: 'histogram',
+                autobinx: false, 
+                xbins: {
+                    start: 0,
+                    end: 5, 
+                    size: barWidth, 
+                }
+            };
+            const trace3 = {
+                name: bigPlayerName,
+                x: bigPlayerData,
+                type: 'histogram',
+                autobinx: false, 
+                xbins: {
+                    start: 0,
+                    end: 20, 
+                    size: barWidth, 
+                }
+            };
+            var data = [trace, trace2, trace3];
+            var layout = {
+                barmode: "group"
+            };
+            Plotly.newPlot(RESULTS, data, layout);
+        </script>
+    </body>
+</html>

@@ -4,6 +4,8 @@
   "description": "Illinois Dispensary Lottery Simulation",
   "main": "index.js",
   "scripts": {
+    "lotterySimulation": "node lottery.js",
+    "viewResults": "open results.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
