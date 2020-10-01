@@ -11,8 +11,13 @@ node.js
 ## How to use:
 Enter the following at the command line:
 ``` sh
-node lottery.js [NUM_SIMULATIONS] [APP_DENSITY] [NUM_ADD_PARTICIPANTS] [YOUR_COMPANY_NAME] [YOUR_APP_COUNT]
+npm run lotterySimulation -- [NUM_SIMULATIONS] [APP_DENSITY] [NUM_ADD_PARTICIPANTS] [YOUR_COMPANY_NAME] [YOUR_APP_COUNT]
 ```
+Then, to view the results:
+``` sh
+npm run viewResults
+```
+
 Parameter|Description
 NUM_SIMULATIONS|Number of simulations per BLS region.
 APP_DENSITY|Number of apps per additional participant.
