@@ -10,7 +10,7 @@ node.js
 
 ## How to use:
 Enter the following at the command line:
-```
+``` sh
 node lottery.js [NUM_SIMULATIONS] [APP_DENSITY] [NUM_ADD_PARTICIPANTS] [YOUR_COMPANY_NAME] [YOUR_APP_COUNT]
 ```
 Parameter|Description
@@ -22,11 +22,12 @@ YOUR_APP_COUNT|Number of apps YOU have in the lottery.
 
 ## Example:
 Console input:
-```
+``` sh
 node lottery.js 1000 3.5 20 "Your Company, INC" 4
 ```
+
 Console output:
-```
+``` sh
 Starting simulator with parameters:
 Number Simulations: 1000
 Application Density: 3.5
