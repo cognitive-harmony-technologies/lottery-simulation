@@ -1,0 +1,19 @@
+{
+  "name": "lottery-simulation",
+  "version": "1.0.0",
+  "description": "Illinois Dispensary Lottery Simulation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/perceptionfarms/lottery-simulation.git"
+  },
+  "author": "Walter Moore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perceptionfarms/lottery-simulation/issues"
+  },
+  "homepage": "https://github.com/perceptionfarms/lottery-simulation#readme"
+}
