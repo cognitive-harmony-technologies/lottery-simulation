@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Cognitive Harmony Technologies, in collaboration with [Perception Farms, Inc](www.perceptionfarms.com) has developed this lottery simulator for the Illinois Dispensary Tie Breaker process.  This allows the user to determine their probability of winning a license given a few assumptions.  We provide this to our fellow applicants hoping to get into the pool and for legislators in order to showcase the unfairness of unlimited applications per entity.  For more details on our motivation, process, analysis and more, please see the [Lottery Model White Paper](papers/Lottery_Model.pdf)
+Cognitive Harmony Technologies, in collaboration with [Perception Farms, Inc](https://www.perceptionfarms.com) has developed this lottery simulator for the Illinois Dispensary Tie Breaker process.  This allows the user to determine their probability of winning a license given a few assumptions.  We provide this to our fellow applicants hoping to get into the pool and for legislators in order to showcase the unfairness of unlimited applications per entity.  For more details on our motivation, process, analysis and more, please see the [Lottery Model White Paper](papers/Lottery_Model.pdf)
 
 ## Prerequisites:
 
